@@ -1,2 +1,2 @@
-# project_wikipedia_scraping
+# wikipedia_scraping
 description
