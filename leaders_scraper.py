@@ -1,7 +1,8 @@
 import requests
-import bs4
+from bs4 import BeautifulSoup
 import re
 import functools
+import json
 
 cache = {}
 def hashable_cache(f):
@@ -57,4 +58,11 @@ def get_leaders():
         
     return leaders_per_country
 
-print(get_leaders())
+get_leaders()
+
+leaders_per_country = get_leaders()
+
+def save():
+    filename = "leaders.json"
+    json.dump(leaders_per_country, open(filename, "w"))
+save()
